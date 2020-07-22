@@ -1,0 +1,52 @@
+@import 'fonts';
+/*
+ *   VARS
+ *************/
+$margin--mini:10px;
+$margin--semi:20px;
+$margin--default:40px;
+$margin--double:80px;
+
+$break--phone: 767px;
+$break--tablet: 991px;
+$break--desktop: 1199px;
+
+$colors: (
+  'black': #000000,
+  'white': #FFFFFF
+);
+
+$font--heading: 'Arial';
+$font--default: 'Arial';
+
+/*
+ *   IMPORTS
+ *************/
+@import 'utils';
+
+body{ font-family: $font--default;color: map-get($colors, 'black');-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+html{font-size: 62.5%;}
+body{font-size: 1.6rem;}
+h1{font-family: $font--heading;font-size: 9rem;line-height: 9rem;font-weight: 700;}
+h2{font-family: $font--heading;font-size: 5.5rem;line-height: 7rem;font-weight: 400;}
+h3{font-family: $font--heading;font-size: 2rem;font-weight: 400;}
+h4{font-family: $font--heading;font-size: 1.6rem;}
+h5{font-family: $font--heading;font-size: 2rem;}
+
+a, a:hover{color: map-get($colors, 'black');text-decoration: none;}
+
+.header{
+  $this: &;
+}
+
+.footer{
+  $this: &;
+}
+
+.section{
+  $this: &;
+}
+
+.block{
+  $this: &;
+}

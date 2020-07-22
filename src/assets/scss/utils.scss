@@ -1,0 +1,196 @@
+$orientations: 'a', 'x', 'y', 't', 'r', 'b', 'l';
+
+.utils{
+
+  $this: &;
+
+  //OLD SPACER CLASSES
+  &--spacer-mini{height: $margin--mini;}
+  &--spacer-semi{height: $margin--semi;}
+  &--spacer-default{height: $margin--default;}
+  &--spacer-double{height: $margin--double;}
+
+  &__spacer{
+    &--mini{height: $margin--mini;}
+    &--semi{height: $margin--semi;}
+    &--default{height: $margin--default;}
+    &--double{height: $margin--double;}
+  }
+
+  &__padding{
+    @each $orientation in $orientations {
+      @if $orientation == 'a' {
+        &--#{$orientation}-mini{padding: $margin--mini;}
+        &--#{$orientation}-semi{padding: $margin--semi;}
+        &--#{$orientation}-default{padding: $margin--default;}
+        &--#{$orientation}-double{padding: $margin--double;}
+      }
+      @if $orientation == 'x' {
+        &--#{$orientation}-mini{padding: 0 $margin--mini;}
+        &--#{$orientation}-semi{padding: 0 $margin--semi;}
+        &--#{$orientation}-default{padding: 0 $margin--default;}
+        &--#{$orientation}-double{padding: 0 $margin--double;}
+      }
+      @if $orientation == 'y' {
+        &--#{$orientation}-mini{padding: $margin--mini 0;}
+        &--#{$orientation}-semi{padding: $margin--semi 0;}
+        &--#{$orientation}-default{padding: $margin--default 0;}
+        &--#{$orientation}-double{padding: $margin--double 0;}
+      }
+      @if $orientation == 't' {
+        &--#{$orientation}-mini{padding: $margin--mini 0 0 0;}
+        &--#{$orientation}-semi{padding: $margin--semi 0 0 0;}
+        &--#{$orientation}-default{padding: $margin--default 0 0 0;}
+        &--#{$orientation}-double{padding: $margin--double 0 0 0;}
+      }
+      @if $orientation == 'r' {
+        &--#{$orientation}-mini{padding: 0 $margin--mini 0 0;}
+        &--#{$orientation}-semi{padding: 0 $margin--semi 0 0;}
+        &--#{$orientation}-default{padding: 0 $margin--default 0 0;}
+        &--#{$orientation}-double{padding: 0 $margin--double 0 0;}
+      }
+      @if $orientation == 'b' {
+        &--#{$orientation}-mini{padding: 0 0 $margin--mini 0;}
+        &--#{$orientation}-semi{padding: 0 0 $margin--semi 0;}
+        &--#{$orientation}-default{padding: 0 0 $margin--default 0;}
+        &--#{$orientation}-double{padding: 0 0 $margin--double 0;}
+      }
+      @if $orientation == 'l' {
+        &--#{$orientation}-mini{padding: 0 0 0 $margin--mini;}
+        &--#{$orientation}-semi{padding: 0 0 0 $margin--semi;}
+        &--#{$orientation}-default{padding: 0 0 0 $margin--default;}
+        &--#{$orientation}-double{padding: 0 0 0 $margin--double;}
+      }
+    }
+  }
+
+  &__margin{
+    @each $orientation in $orientations {
+      @if $orientation == 'a' {
+        &--#{$orientation}-mini{margin: $margin--mini;}
+        &--#{$orientation}-semi{margin: $margin--semi;}
+        &--#{$orientation}-default{margin: $margin--default;}
+        &--#{$orientation}-double{margin: $margin--double;}
+      }
+      @if $orientation == 'x' {
+        &--#{$orientation}-mini{margin: 0 $margin--mini;}
+        &--#{$orientation}-semi{margin: 0 $margin--semi;}
+        &--#{$orientation}-default{margin: 0 $margin--default;}
+        &--#{$orientation}-double{margin: 0 $margin--double;}
+      }
+      @if $orientation == 'y' {
+        &--#{$orientation}-mini{margin: $margin--mini 0;}
+        &--#{$orientation}-semi{margin: $margin--semi 0;}
+        &--#{$orientation}-default{margin: $margin--default 0;}
+        &--#{$orientation}-double{margin: $margin--double 0;}
+      }
+      @if $orientation == 't' {
+        &--#{$orientation}-mini{margin: $margin--mini 0 0 0;}
+        &--#{$orientation}-semi{margin: $margin--semi 0 0 0;}
+        &--#{$orientation}-default{margin: $margin--default 0 0 0;}
+        &--#{$orientation}-double{margin: $margin--double 0 0 0;}
+      }
+      @if $orientation == 'r' {
+        &--#{$orientation}-mini{margin: 0 $margin--mini 0 0;}
+        &--#{$orientation}-semi{margin: 0 $margin--semi 0 0;}
+        &--#{$orientation}-default{margin: 0 $margin--default 0 0;}
+        &--#{$orientation}-double{margin: 0 $margin--double 0 0;}
+      }
+      @if $orientation == 'b' {
+        &--#{$orientation}-mini{margin: 0 0 $margin--mini 0;}
+        &--#{$orientation}-semi{margin: 0 0 $margin--semi 0;}
+        &--#{$orientation}-default{margin: 0 0 $margin--default 0;}
+        &--#{$orientation}-double{margin: 0 0 $margin--double 0;}
+      }
+      @if $orientation == 'l' {
+        &--#{$orientation}-mini{margin: 0 0 0 $margin--mini;}
+        &--#{$orientation}-semi{margin: 0 0 0 $margin--semi;}
+        &--#{$orientation}-default{margin: 0 0 0 $margin--default;}
+        &--#{$orientation}-double{margin: 0 0 0 $margin--double;}
+      }
+    }
+  }
+}
+
+/*
+*   COLORS SHIT
+*************/
+@mixin hover-background-lighten($color) {
+  background-color: $color;
+  &:hover {
+    background-color: lighten($color,10%);
+  }
+}
+@mixin hover-background-darken($color) {
+  background-color: $color;
+  &:hover {
+    background-color: darken($color,10%);
+  }
+}
+@mixin hover-text-lighten($color) {
+  color: $color;
+  &:hover {
+    color: lighten($color,20%);
+  }
+}
+@mixin hover-text-darken($color) {
+  color: $color;
+  &:hover {
+    color: darken($color,20%);
+  }
+}
+
+.no-scroll{overflow: hidden;}
+
+[data-aspect-ratio] {
+  display: block;
+  max-width: 100%;
+  position: relative;
+  &:before { content: ''; display: block; }
+  > * { display: block; height: 100%; left: 0; position: absolute; top: 0; width: 100%; }
+}
+[data-aspect-ratio="3:1"]:before { padding-top: 33.33%; }
+[data-aspect-ratio="2:1"]:before { padding-top: 50%; }
+[data-aspect-ratio="16:9"]:before { padding-top: 56.25%; }
+[data-aspect-ratio="3:2"]:before { padding-top: 66.66%; }
+[data-aspect-ratio="4:3"]:before { padding-top: 75%; }
+[data-aspect-ratio="1:1"]:before { padding-top: 100%; }
+[data-aspect-ratio="3:4"]:before { padding-top: 133.33%; }
+[data-aspect-ratio="2:3"]:before { padding-top: 150%; }
+[data-aspect-ratio="9:16"]:before { padding-top: 177.77%; }
+[data-aspect-ratio="1:2"]:before { padding-top: 200%; }
+[data-aspect-ratio="1:3"]:before { padding-top: 300%; }
+
+@each $name, $hexa in $colors {
+  .color--#{$name} {
+    color: #{$hexa} !important;
+  }
+  .bg--#{$name} {
+    background: #{$hexa} !important;
+  }
+  .section--#{$name}{
+    background: #{$hexa};
+  }
+  .block--#{$name}{
+    background: #{$hexa};
+  }
+  .btn--#{$name}{
+    @include hover-background-lighten($hexa);
+  }
+
+  .hr--#{$name}{
+    background: #{$hexa} !important;
+  }
+
+  .badge--#{$name}{
+    background: #{$hexa};
+  }
+
+  .tag--#{$name}{
+    background: #{$hexa};
+  }
+
+  .label--#{$name}{
+    background: #{$hexa};
+  }
+}

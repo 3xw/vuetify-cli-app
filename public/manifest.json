@@ -1,0 +1,9 @@
+{
+  "name": "Vue CLI App",
+  "short_name": "Vue CLI App",
+  "icons": [],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF"
+}
